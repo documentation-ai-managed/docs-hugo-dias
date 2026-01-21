@@ -1,0 +1,120 @@
+---
+title: Getting Started with Hugo Dias
+description: Set up your account and create your first documentation space in just a few minutes.
+---
+
+## Prerequisites
+
+Before you begin, ensure you have:
+
+<Callout kind="info">
+
+- A modern web browser like Chrome, Firefox, or Safari
+- An email address for account verification
+- Optional: GitHub account for version control integration
+
+</Callout>
+
+## Create Your Account
+
+Sign up for Hugo Dias in under a minute.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="monitor">
+    Navigate to `https://dashboard.example.com` and click **Sign Up**.
+  </Step>
+  <Step title="Enter Details" icon="user">
+    Provide your email, full name, and a secure password. Accept the terms of service.
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for a verification link from Hugo Dias and click it to activate your account.
+  </Step>
+</Steps>
+
+## Log In and Create Your First Space
+
+Once verified, access your dashboard.
+
+<Steps>
+  <Step title="Log In" icon="log-in">
+    Return to `https://dashboard.example.com/login` and enter your credentials.
+  </Step>
+  <Step title="Create Space" icon="plus">
+    Click **New Documentation Space**. Name it `My Project Docs` and select a starter template like "Empty" or "Markdown".
+  </Step>
+  <Step title="Configure Basics" icon="settings">
+    Set visibility to **Public** or **Private**, add a description like "Documentation for my Hugo Dias project", and save.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Choose **Private** for internal projects until ready to share.
+</Callout>
+
+## Upload Initial Project Files
+
+Add your first files via the web interface or API.
+
+<Tabs>
+  <Tab title="Web UI (Drag & Drop)" icon="upload">
+    In your new space, click **Upload Files**.
+
+    Drag and drop your `README.md`, `api.mdx`, and folder structure, or browse to select them.
+
+    Files appear instantly in the file tree.
+  </Tab>
+  <Tab title="API Upload" icon="api">
+    Use the Spaces API to upload programmatically.
+
+    <CodeGroup tabs="cURL,JavaScript">
+      ````bash
+      curl -X POST https://api.example.com/v1/spaces/YOUR_SPACE_ID/files \
+        -H "Authorization: Bearer YOUR_API_KEY" \
+        -F "file=@README.md"
+      ````
+
+      ````javascript
+      const formData = new FormData();
+      formData.append('file', readmeFile);
+
+      await fetch(`https://api.example.com/v1/spaces/${spaceId}/files`, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${YOUR_API_KEY}` },
+        body: formData
+      });
+      ````
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<ParamField path="spaceId" param-type="string" required="true">
+  Unique identifier for your documentation space.
+</ParamField>
+
+<ParamField header="Authorization" param-type="string" required="true">
+  Bearer token: `Bearer YOUR_API_KEY`.
+</ParamField>
+
+## Basic Interface Tour
+
+Familiarize yourself with key areas.
+
+<Columns cols={3}>
+  <Card title="File Tree" icon="file-tree" href="#file-tree">
+    Navigate and organize your MDX, Markdown, and asset files.
+  </Card>
+  <Card title="Editor" icon="edit-3" href="#editor">
+    Real-time preview and syntax highlighting for MDX content.
+  </Card>
+  <Card title="Publish" icon="globe" href="#publish">
+    One-click deployment to a custom domain or shareable link.
+  </Card>
+</Columns>
+
+## Next Steps
+
+<Callout kind="success">
+
+Congratulations! Your first Hugo Dias space is ready. Explore [authentication](/authentication) for team access or [configuration](/configuration) for advanced settings.
+
+</Callout>

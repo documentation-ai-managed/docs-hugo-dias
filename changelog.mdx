@@ -1,0 +1,104 @@
+---
+title: Changelog
+description: Track the latest updates and improvements to Hugo Dias documentation platform.
+---
+
+## Recent Updates
+
+Welcome to the Hugo Dias changelog. You can find details on all version releases here, including new features, bug fixes, improvements, and upcoming changes. Check back frequently for the latest enhancements to your documentation experience.
+
+<Callout kind="info">
+  Subscribe to our RSS feed or join the community Discord to get notified about new releases automatically.
+</Callout>
+
+<Update label="2024-10-20" description="v1.3.0" tags={["feature", "improvement"]}>
+  
+## New Features
+
+- Added support for custom brand colors in themes, like `#3B82F6` for Hugo Dias branding
+- Introduced real-time collaboration editing for documentation pages
+- New search indexing for faster page discovery across your docs site
+
+## Improvements
+
+- Enhanced MDX parsing speed by 40% for large documentation sites
+- Better error handling for malformed YAML frontmatter
+- Updated Lucide icon library to latest version with 200+ new icons
+
+</Update>
+
+<Update label="2024-10-01" description="v1.2.0" tags={["bugfix", "improvement"]}>
+  
+## Bug Fixes
+
+- Fixed parsing errors with nested code blocks using 4 backticks
+- Resolved issue where `{` and `}` characters broke JSX components in prose
+- Corrected Mermaid diagram rendering when using simple flowchart syntax
+
+## Improvements
+
+- Optimized component rendering for 20% faster page loads
+- Added validation for ParamField to ensure only one location attribute per field
+- Improved accessibility with better alt text requirements on all Images
+
+</Update>
+
+<Update label="2024-09-15" description="v1.1.0" tags={["feature", "breaking"]}>
+  
+## New Features
+
+- Launched Update component for streamlined changelog entries
+- Added Columns and Cards layout system for feature grids
+- Integrated Steps component for tutorial workflows
+
+## Breaking Changes
+
+- Removed deprecated `<Mermaid>` JSX component; use code blocks only
+- Changed attribute quoting to require double quotes exclusively
+- Updated heading rules: H1 forbidden, always start with H2
+
+## Bug Fixes
+
+- Patched special character escaping for `<`, `>`, `{`, `}` in text
+
+</Update>
+
+## Known Issues and Upcoming
+
+<Expandable title="Known Issues" default-open="true">
+  
+Currently, some users report occasional delays in webhook processing for large documentation updates. We recommend batching changes under 100 files.
+
+Known limitations:
+- Mermaid diagrams limited to simple graphs (3-5 nodes recommended)
+- Nested code blocks require exactly 4 backticks
+
+</Expandable>
+
+<Expandable title="Upcoming Changes">
+  
+Roadmap preview:
+- v1.4.0: Native video embeds and Iframe improvements
+- v1.5.0: AI-assisted documentation generation
+- Full support for dynamic theming with brand colors like `#3B82F6`
+
+Provide feedback on GitHub to help prioritize features.
+</Expandable>
+
+## Get Started or Dive Deeper
+
+<Columns cols={3}>
+  <Card title="Quickstart" icon="zap" href="/quickstart">
+    Set up your first documentation site in under 5 minutes.
+  </Card>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your docs with API keys and tokens.
+  </Card>
+  <Card title="Introduction" icon="book-open" href="/introduction">
+    Learn the fundamentals of Hugo Dias.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Upgraded recently? Review [migration guide](/changelog#breaking-changes) for v1.1.0+.
+</Callout>
